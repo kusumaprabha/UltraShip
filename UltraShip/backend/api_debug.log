@@ -1,0 +1,464 @@
+2026-02-24 15:30:26,936 - __main__ - INFO - Initializing DocumentProcessor...
+2026-02-24 15:30:26,936 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-24 15:30:27,863 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2026-02-24 15:30:27,863 - __main__ - INFO - Initializing RAGEngine...
+2026-02-24 15:30:28,750 - __main__ - INFO - Initializing StructuredExtractor...
+2026-02-24 15:30:29,557 - asyncio - DEBUG - Using proactor: IocpProactor
+2026-02-24 15:31:31,977 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-24 15:31:31,977 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2026-02-24 15:31:31,978 - multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2026-02-24 15:31:31,978 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-24 15:31:31,978 - multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2026-02-24 15:31:31,978 - multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2026-02-24 15:31:31,978 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-24 15:31:31,980 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-24 15:31:31,981 - multipart.multipart - DEBUG - Calling on_part_data with data[155:32768]
+2026-02-24 15:31:31,986 - multipart.multipart - DEBUG - Calling on_part_data with data[0:29290]
+2026-02-24 15:31:31,986 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,987 - multipart.multipart - DEBUG - Calling on_part_data with data[29291:30715]
+2026-02-24 15:31:31,987 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,988 - multipart.multipart - DEBUG - Calling on_part_data with data[30716:33932]
+2026-02-24 15:31:31,988 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,988 - multipart.multipart - DEBUG - Calling on_part_data with data[33933:34450]
+2026-02-24 15:31:31,988 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,989 - multipart.multipart - DEBUG - Calling on_part_data with data[34451:40714]
+2026-02-24 15:31:31,989 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,989 - multipart.multipart - DEBUG - Calling on_part_data with data[40715:40722]
+2026-02-24 15:31:31,990 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,990 - multipart.multipart - DEBUG - Calling on_part_data with data[40723:44847]
+2026-02-24 15:31:31,990 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 15:31:31,991 - multipart.multipart - DEBUG - Calling on_part_data with data[44848:64557]
+2026-02-24 15:31:31,991 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-24 15:31:31,991 - multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-24 15:31:32,027 - __main__ - INFO - [upload_1762109380288] File size: 97170 bytes
+2026-02-24 15:31:32,027 - __main__ - INFO - [upload_1762109380288] Processing document...
+2026-02-24 15:32:40,961 - __main__ - INFO - [ask_1762161619040] File ID: 222c2fef96b3
+2026-02-24 15:32:40,961 - __main__ - INFO - [ask_1762161619040] Loading document...
+2026-02-24 15:32:40,962 - __main__ - INFO - [ask_1762161619040] Document loaded: 1 chunks available
+2026-02-24 15:32:40,962 - __main__ - INFO - [ask_1762161619040] Retrieving relevant chunks for: 'What is the reference ID?'
+2026-02-24 15:32:40,984 - __main__ - ERROR - [ask_1762161619040] Error in retrieve_relevant_chunks: 'index'
+2026-02-24 15:32:40,986 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\kusum\Downloads\UltraShip\ultra-doc-intelligence\backend\app.py", line 157, in ask_question
+    chunks = rag_engine.retrieve_relevant_chunks(
+  File "C:\Users\kusum\Downloads\UltraShip\ultra-doc-intelligence\backend\rag_engine.py", line 43, in retrieve_relevant_chunks
+    index = doc['index']
+KeyError: 'index'
+
+2026-02-24 16:17:43,086 - __main__ - INFO - [extract_1762187424880] Starting extraction...
+2026-02-24 16:17:43,155 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:17:43,200 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019A4A9060E0>
+2026-02-24 16:17:43,200 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019A456FD1C0> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:17:43,255 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019A4A906170>
+2026-02-24 16:17:43,255 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:17:43,257 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:17:43,257 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:17:43,258 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:17:43,259 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:17:43,887 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 10:48:09 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'10800'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'6s'), (b'x-request-id', b'req_01kj7m6xgefyp8nyp9232q8x3g'), (b'set-cookie', b'__cf_bm=J07ThpeexkauDHM9QKqGXPBoDoLYix7R4zrkyR6.6Hw-1771930088.9231884-1.0.1.1-bY69pRjXCY0ZNBEUn6iGaajeR02qSezd4kcQVM00Q2AV70z1pRw3hwK38Roso3OqGEUKtAH03OIN9f820ZlPf3P0lI42hD1.wQGdhMtyRq5xnGMpo4CDa4HEUrEb6p7R; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:18:09 GMT'), (b'via', b'1.1 google'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e638fcd5f7f2e-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:17:43,891 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:17:43,893 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:17:43,894 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:17:43,895 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:17:43,895 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:17:43,896 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:22:56,027 - __main__ - INFO - Initializing DocumentProcessor...
+2026-02-24 16:22:56,029 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-24 16:22:57,075 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2026-02-24 16:22:57,084 - __main__ - INFO - Initializing RAGEngine...
+2026-02-24 16:22:57,995 - __main__ - INFO - Initializing StructuredExtractor...
+2026-02-24 16:22:58,741 - asyncio - DEBUG - Using proactor: IocpProactor
+2026-02-24 16:25:31,119 - __main__ - INFO - Initializing DocumentProcessor...
+2026-02-24 16:25:31,119 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-24 16:25:31,594 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2026-02-24 16:25:31,594 - __main__ - INFO - DocumentProcessor initialized
+2026-02-24 16:25:31,594 - __main__ - INFO - Initializing RAGEngine...
+2026-02-24 16:25:32,179 - __main__ - INFO - RAGEngine initialized
+2026-02-24 16:25:32,179 - __main__ - INFO - Initializing StructuredExtractor...
+2026-02-24 16:25:32,670 - __main__ - INFO - StructuredExtractor initialized
+2026-02-24 16:25:32,681 - __main__ - INFO - Starting Ultra Doc-Intelligence API server...
+2026-02-24 16:25:32,681 - __main__ - INFO - Listening on http://127.0.0.1:8000
+2026-02-24 16:25:32,687 - asyncio - DEBUG - Using proactor: IocpProactor
+2026-02-24 16:28:49,768 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-24 16:28:49,768 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2026-02-24 16:28:49,769 - multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2026-02-24 16:28:49,769 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-24 16:28:49,770 - multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2026-02-24 16:28:49,770 - multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2026-02-24 16:28:49,770 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-24 16:28:49,770 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-24 16:28:49,772 - multipart.multipart - DEBUG - Calling on_part_data with data[155:16384]
+2026-02-24 16:28:49,773 - multipart.multipart - DEBUG - Calling on_part_data with data[0:38637]
+2026-02-24 16:28:49,774 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 16:28:49,774 - multipart.multipart - DEBUG - Calling on_part_data with data[38638:50316]
+2026-02-24 16:28:49,775 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 16:28:49,777 - multipart.multipart - DEBUG - Calling on_part_data with data[50317:57098]
+2026-02-24 16:28:49,777 - multipart.multipart - DEBUG - Calling on_part_data with data[0:1]
+2026-02-24 16:28:49,778 - multipart.multipart - DEBUG - Calling on_part_data with data[57099:80941]
+2026-02-24 16:28:49,778 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-24 16:28:49,779 - multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-24 16:28:49,780 - __main__ - INFO - [upload_2061989384576] Uploading file: LD53657-Carrier-RC.pdf
+2026-02-24 16:28:49,780 - __main__ - INFO - [upload_2061989384576] File size: 97170 bytes
+2026-02-24 16:28:49,780 - __main__ - INFO - [upload_2061989384576] Processing document...
+2026-02-24 16:28:54,512 - __main__ - INFO - [upload_2061989384576] Document processed: d720778d7491 with 1 chunks
+2026-02-24 16:30:10,858 - __main__ - INFO - [ask_2062019596976] Question received: What is the reference ID?
+2026-02-24 16:30:10,859 - __main__ - INFO - [ask_2062019596976] File ID: d720778d7491
+2026-02-24 16:30:10,861 - __main__ - INFO - [ask_2062019596976] Loading document...
+2026-02-24 16:30:10,862 - __main__ - INFO - [ask_2062019596976] Document loaded: 1 chunks available
+2026-02-24 16:30:10,863 - __main__ - INFO - [ask_2062019596976] Retrieving relevant chunks for: 'What is the reference ID?'
+2026-02-24 16:30:10,925 - __main__ - INFO - [ask_2062019596976] Retrieved 3 chunks
+2026-02-24 16:30:10,926 - __main__ - DEBUG - [ask_2062019596976] Chunk 0: score=0.346, index=0
+2026-02-24 16:30:10,926 - __main__ - DEBUG - [ask_2062019596976] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:30:10,927 - __main__ - DEBUG - [ask_2062019596976] Chunk 1: score=0.000, index=-1
+2026-02-24 16:30:10,927 - __main__ - DEBUG - [ask_2062019596976] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:30:10,928 - __main__ - DEBUG - [ask_2062019596976] Chunk 2: score=0.000, index=-1
+2026-02-24 16:30:10,928 - __main__ - DEBUG - [ask_2062019596976] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:30:10,928 - __main__ - INFO - [ask_2062019596976] Generating answer...
+2026-02-24 16:30:11,035 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:30:11,067 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01CB9D7B0>
+2026-02-24 16:30:11,068 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:30:11,097 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01CB9D840>
+2026-02-24 16:30:11,097 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:30:11,101 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:30:11,101 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:30:11,103 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:30:11,104 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:30:11,356 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:00:37 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7mxqthfpvthvhgk9b7kq6v'), (b'set-cookie', b'__cf_bm=FsZYhM4vfQIERzg.Jb6upaF1R57AV5YEEoqfidzpaYg-1771930836.7830575-1.0.1.1-CGrR_JRa0QcRyInpm5NWt4MbizqcL3giZ873XFCDE_YDXafnuu0G5IrOqO.N4rfu1unG3Rv7.tOY3J7VxUkd3X7_sEQdNmT521j1waNrHnu9q9EA9pcH2BkiM2qwV_x9; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:30:37 GMT'), (b'via', b'1.1 google'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e75d1e8b97237-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:30:11,360 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:30:11,361 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:30:11,362 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:30:11,363 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:30:11,363 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:30:11,364 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:30:11,374 - __main__ - INFO - [ask_2062019596976] Answer generated: 'LD53657...'
+2026-02-24 16:30:11,374 - __main__ - INFO - [ask_2062019596976] Confidence: 0.673
+2026-02-24 16:30:47,182 - __main__ - INFO - [extract_2062105303984] Extracting data from file: d720778d7491
+2026-02-24 16:30:47,183 - __main__ - INFO - [extract_2062105303984] Starting extraction...
+2026-02-24 16:30:47,202 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:30:47,237 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F121360>
+2026-02-24 16:30:47,238 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E07ED761C0> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:30:47,262 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F1210F0>
+2026-02-24 16:30:47,263 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:30:47,263 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:30:47,264 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:30:47,264 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:30:47,265 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:30:47,701 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:01:13 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'10800'), (b'x-ratelimit-reset-requests', b'2m52.8s'), (b'x-ratelimit-reset-tokens', b'6s'), (b'x-request-id', b'req_01kj7myv55f54b0jzey1sydt1e'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=Fk_G.zA3HTfOuOkLw5UR9LvbziRePlTB16tFGp6THgo-1771930872.9415128-1.0.1.1-ZussVLIEj4lNMNuo5WRL6LFnMsg9wbCct62A.M4IgZrZdd0tCTjNYUWajnUYHghhzjiiWv4tfP7Hq54hdiKN7ETjUDXJEPQAHCMaAKxjj4kDObgx296RtPt9yBRVWnCu; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:31:13 GMT'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e76b3efbc7f5f-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:30:47,702 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:30:47,702 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:30:47,703 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:30:47,703 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:30:47,703 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:30:47,703 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:30:47,706 - __main__ - INFO - [extract_2062105303984] Extraction complete: 9 fields found
+2026-02-24 16:31:47,447 - __main__ - INFO - [ask_2062439679376] Question received: What is the reference number?
+2026-02-24 16:31:47,448 - __main__ - INFO - [ask_2062439679376] File ID: d720778d7491
+2026-02-24 16:31:47,448 - __main__ - INFO - [ask_2062439679376] Loading document...
+2026-02-24 16:31:47,448 - __main__ - INFO - [ask_2062439679376] Document loaded: 1 chunks available
+2026-02-24 16:31:47,448 - __main__ - INFO - [ask_2062439679376] Retrieving relevant chunks for: 'What is the reference number?'
+2026-02-24 16:31:47,484 - __main__ - INFO - [ask_2062439679376] Retrieved 3 chunks
+2026-02-24 16:31:47,484 - __main__ - DEBUG - [ask_2062439679376] Chunk 0: score=0.357, index=0
+2026-02-24 16:31:47,485 - __main__ - DEBUG - [ask_2062439679376] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:31:47,485 - __main__ - DEBUG - [ask_2062439679376] Chunk 1: score=0.000, index=-1
+2026-02-24 16:31:47,486 - __main__ - DEBUG - [ask_2062439679376] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:31:47,486 - __main__ - DEBUG - [ask_2062439679376] Chunk 2: score=0.000, index=-1
+2026-02-24 16:31:47,486 - __main__ - DEBUG - [ask_2062439679376] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:31:47,486 - __main__ - INFO - [ask_2062439679376] Generating answer...
+2026-02-24 16:31:47,499 - httpcore.connection - DEBUG - close.started
+2026-02-24 16:31:47,508 - httpcore.connection - DEBUG - close.complete
+2026-02-24 16:31:47,508 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:31:47,533 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F121ED0>
+2026-02-24 16:31:47,533 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:31:47,563 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F121F00>
+2026-02-24 16:31:47,563 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:31:47,564 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:31:47,564 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:31:47,565 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:31:47,565 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:31:48,052 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:02:13 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'997'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'4m19.2s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7n0p13fv8s8z0y657bzp0v'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e782ccbf7b2a6-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:31:48,053 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:31:48,053 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:31:48,054 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:31:48,054 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:31:48,054 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:31:48,054 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:31:48,056 - __main__ - INFO - [ask_2062439679376] Answer generated: 'LD53657...'
+2026-02-24 16:31:48,057 - __main__ - INFO - [ask_2062439679376] Confidence: 0.678
+2026-02-24 16:32:13,879 - __main__ - INFO - [ask_2062412020880] Question received: What is the reference number?
+2026-02-24 16:32:13,879 - __main__ - INFO - [ask_2062412020880] File ID: d720778d7491
+2026-02-24 16:32:13,879 - __main__ - INFO - [ask_2062412020880] Loading document...
+2026-02-24 16:32:13,880 - __main__ - INFO - [ask_2062412020880] Document loaded: 1 chunks available
+2026-02-24 16:32:13,880 - __main__ - INFO - [ask_2062412020880] Retrieving relevant chunks for: 'What is the reference number?'
+2026-02-24 16:32:13,904 - __main__ - INFO - [ask_2062412020880] Retrieved 3 chunks
+2026-02-24 16:32:13,904 - __main__ - DEBUG - [ask_2062412020880] Chunk 0: score=0.357, index=0
+2026-02-24 16:32:13,905 - __main__ - DEBUG - [ask_2062412020880] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:32:13,905 - __main__ - DEBUG - [ask_2062412020880] Chunk 1: score=0.000, index=-1
+2026-02-24 16:32:13,906 - __main__ - DEBUG - [ask_2062412020880] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:32:13,906 - __main__ - DEBUG - [ask_2062412020880] Chunk 2: score=0.000, index=-1
+2026-02-24 16:32:13,906 - __main__ - DEBUG - [ask_2062412020880] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:32:13,906 - __main__ - INFO - [ask_2062412020880] Generating answer...
+2026-02-24 16:32:13,920 - httpcore.connection - DEBUG - close.started
+2026-02-24 16:32:13,920 - httpcore.connection - DEBUG - close.complete
+2026-02-24 16:32:13,922 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:32:13,939 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F1312A0>
+2026-02-24 16:32:13,939 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:32:13,968 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F1312D0>
+2026-02-24 16:32:13,969 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:32:13,970 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:32:13,971 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:32:13,971 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:32:13,972 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:32:14,243 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:02:39 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'996'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'5m45.6s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7n1ft4fwa8xjjy4yb6jkw5'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e78d1b8547f22-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:32:14,244 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:32:14,244 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:32:14,245 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:32:14,245 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:32:14,245 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:32:14,245 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:32:14,247 - __main__ - INFO - [ask_2062412020880] Answer generated: 'LD53657...'
+2026-02-24 16:32:14,247 - __main__ - INFO - [ask_2062412020880] Confidence: 0.678
+2026-02-24 16:33:17,462 - __main__ - INFO - [ask_2062030014640] Question received: What is the shipment ID?
+2026-02-24 16:33:17,462 - __main__ - INFO - [ask_2062030014640] File ID: d720778d7491
+2026-02-24 16:33:17,462 - __main__ - INFO - [ask_2062030014640] Loading document...
+2026-02-24 16:33:17,463 - __main__ - INFO - [ask_2062030014640] Document loaded: 1 chunks available
+2026-02-24 16:33:17,463 - __main__ - INFO - [ask_2062030014640] Retrieving relevant chunks for: 'What is the shipment ID?'
+2026-02-24 16:33:17,487 - __main__ - INFO - [ask_2062030014640] Retrieved 3 chunks
+2026-02-24 16:33:17,487 - __main__ - DEBUG - [ask_2062030014640] Chunk 0: score=0.420, index=0
+2026-02-24 16:33:17,487 - __main__ - DEBUG - [ask_2062030014640] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:33:17,487 - __main__ - DEBUG - [ask_2062030014640] Chunk 1: score=0.000, index=-1
+2026-02-24 16:33:17,488 - __main__ - DEBUG - [ask_2062030014640] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:33:17,488 - __main__ - DEBUG - [ask_2062030014640] Chunk 2: score=0.000, index=-1
+2026-02-24 16:33:17,488 - __main__ - DEBUG - [ask_2062030014640] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:33:17,488 - __main__ - INFO - [ask_2062030014640] Generating answer...
+2026-02-24 16:33:17,505 - httpcore.connection - DEBUG - close.started
+2026-02-24 16:33:17,505 - httpcore.connection - DEBUG - close.complete
+2026-02-24 16:33:17,506 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:33:17,524 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F132B30>
+2026-02-24 16:33:17,525 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:33:17,551 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F132B60>
+2026-02-24 16:33:17,552 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:33:17,552 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:33:17,553 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:33:17,553 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:33:17,553 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:33:17,822 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:03:43 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'995'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'7m12s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7n3dxsf4sbgax5ybk2z30s'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e7a5f39eff5d2-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:33:17,823 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:33:17,824 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:33:17,825 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:33:17,825 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:33:17,825 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:33:17,826 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:33:17,828 - __main__ - INFO - [ask_2062030014640] Answer generated: 'Reference ID: LD53657...'
+2026-02-24 16:33:17,828 - __main__ - INFO - [ask_2062030014640] Confidence: 0.610
+2026-02-24 16:34:00,649 - __main__ - INFO - [ask_2063710304784] Question received: What is the customer contact
+2026-02-24 16:34:00,649 - __main__ - INFO - [ask_2063710304784] File ID: d720778d7491
+2026-02-24 16:34:00,650 - __main__ - INFO - [ask_2063710304784] Loading document...
+2026-02-24 16:34:00,650 - __main__ - INFO - [ask_2063710304784] Document loaded: 1 chunks available
+2026-02-24 16:34:00,650 - __main__ - INFO - [ask_2063710304784] Retrieving relevant chunks for: 'What is the customer contact'
+2026-02-24 16:34:00,677 - __main__ - INFO - [ask_2063710304784] Retrieved 3 chunks
+2026-02-24 16:34:00,677 - __main__ - DEBUG - [ask_2063710304784] Chunk 0: score=0.377, index=0
+2026-02-24 16:34:00,677 - __main__ - DEBUG - [ask_2063710304784] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:34:00,678 - __main__ - DEBUG - [ask_2063710304784] Chunk 1: score=0.000, index=-1
+2026-02-24 16:34:00,678 - __main__ - DEBUG - [ask_2063710304784] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:34:00,678 - __main__ - DEBUG - [ask_2063710304784] Chunk 2: score=0.000, index=-1
+2026-02-24 16:34:00,679 - __main__ - DEBUG - [ask_2063710304784] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:34:00,679 - __main__ - INFO - [ask_2063710304784] Generating answer...
+2026-02-24 16:34:00,694 - httpcore.connection - DEBUG - close.started
+2026-02-24 16:34:00,695 - httpcore.connection - DEBUG - close.complete
+2026-02-24 16:34:00,695 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:34:00,727 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F133730>
+2026-02-24 16:34:00,727 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:34:00,749 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F133B80>
+2026-02-24 16:34:00,750 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:34:00,751 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:34:00,751 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:34:00,752 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:34:00,753 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:34:01,019 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:04:26 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'994'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'8m38.4s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7n4r3ne1bv4hghk2gx7b6c'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e7b6d2e706115-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:34:01,020 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:34:01,021 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:34:01,021 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:34:01,023 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:34:01,023 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:34:01,024 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:34:01,030 - __main__ - INFO - [ask_2063710304784] Answer generated: 'Not found in document....'
+2026-02-24 16:34:01,030 - __main__ - INFO - [ask_2063710304784] Confidence: 0.139
+2026-02-24 16:34:43,879 - __main__ - INFO - [ask_2061988826624] Question received: Give me the Customer details?
+2026-02-24 16:34:43,879 - __main__ - INFO - [ask_2061988826624] File ID: d720778d7491
+2026-02-24 16:34:43,879 - __main__ - INFO - [ask_2061988826624] Loading document...
+2026-02-24 16:34:43,879 - __main__ - INFO - [ask_2061988826624] Document loaded: 1 chunks available
+2026-02-24 16:34:43,880 - __main__ - INFO - [ask_2061988826624] Retrieving relevant chunks for: 'Give me the Customer details?'
+2026-02-24 16:34:43,902 - __main__ - INFO - [ask_2061988826624] Retrieved 3 chunks
+2026-02-24 16:34:43,902 - __main__ - DEBUG - [ask_2061988826624] Chunk 0: score=0.412, index=0
+2026-02-24 16:34:43,902 - __main__ - DEBUG - [ask_2061988826624] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:34:43,903 - __main__ - DEBUG - [ask_2061988826624] Chunk 1: score=0.000, index=-1
+2026-02-24 16:34:43,903 - __main__ - DEBUG - [ask_2061988826624] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:34:43,903 - __main__ - DEBUG - [ask_2061988826624] Chunk 2: score=0.000, index=-1
+2026-02-24 16:34:43,903 - __main__ - DEBUG - [ask_2061988826624] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:34:43,904 - __main__ - INFO - [ask_2061988826624] Generating answer...
+2026-02-24 16:34:43,915 - httpcore.connection - DEBUG - close.started
+2026-02-24 16:34:43,916 - httpcore.connection - DEBUG - close.complete
+2026-02-24 16:34:43,917 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:34:43,933 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F13EBF0>
+2026-02-24 16:34:43,934 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:34:43,961 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F13EC20>
+2026-02-24 16:34:43,961 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:34:43,962 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:34:43,963 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:34:43,964 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:34:43,965 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:34:44,516 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:05:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'993'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'10m4.8s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7n62a2fega8zvppwz3qjq6'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e7c7b393e8004-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:34:44,517 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:34:44,517 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:34:44,518 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:34:44,518 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:34:44,519 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:34:44,519 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:34:44,521 - __main__ - INFO - [ask_2061988826624] Answer generated: 'Not found in document. 
+
+However, the following details are available: 
+- Dispatcher: Zukhruf Rukha
+...'
+2026-02-24 16:34:44,521 - __main__ - INFO - [ask_2061988826624] Confidence: 0.170
+2026-02-24 16:35:59,028 - __main__ - INFO - [ask_2062412006880] Question received: Give me the Carrier details?
+2026-02-24 16:35:59,029 - __main__ - INFO - [ask_2062412006880] File ID: d720778d7491
+2026-02-24 16:35:59,030 - __main__ - INFO - [ask_2062412006880] Loading document...
+2026-02-24 16:35:59,030 - __main__ - INFO - [ask_2062412006880] Document loaded: 1 chunks available
+2026-02-24 16:35:59,030 - __main__ - INFO - [ask_2062412006880] Retrieving relevant chunks for: 'Give me the Carrier details?'
+2026-02-24 16:35:59,073 - __main__ - INFO - [ask_2062412006880] Retrieved 3 chunks
+2026-02-24 16:35:59,073 - __main__ - DEBUG - [ask_2062412006880] Chunk 0: score=0.469, index=0
+2026-02-24 16:35:59,074 - __main__ - DEBUG - [ask_2062412006880] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:35:59,074 - __main__ - DEBUG - [ask_2062412006880] Chunk 1: score=0.000, index=-1
+2026-02-24 16:35:59,074 - __main__ - DEBUG - [ask_2062412006880] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:35:59,074 - __main__ - DEBUG - [ask_2062412006880] Chunk 2: score=0.000, index=-1
+2026-02-24 16:35:59,074 - __main__ - DEBUG - [ask_2062412006880] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:35:59,076 - __main__ - INFO - [ask_2062412006880] Generating answer...
+2026-02-24 16:35:59,101 - httpcore.connection - DEBUG - close.started
+2026-02-24 16:35:59,101 - httpcore.connection - DEBUG - close.complete
+2026-02-24 16:35:59,102 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:35:59,123 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E0182DCB80>
+2026-02-24 16:35:59,124 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E01804E640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:35:59,148 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E01F13F190>
+2026-02-24 16:35:59,149 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:35:59,149 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:35:59,151 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:35:59,152 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:35:59,152 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:35:59,522 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:06:25 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'992'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'11m31.2s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7n8bq6e81ae2vdka31tjcp'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e7e511bc2d988-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:35:59,523 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:35:59,525 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:35:59,526 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:35:59,526 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:35:59,526 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:35:59,527 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:35:59,530 - __main__ - INFO - [ask_2062412006880] Answer generated: 'Carrier: SWIFT SHIFT LOGISTICS LLC
+MC: MC1685682
+Phone: (618) 629-3271
+Equipment: Flatbed
+Agreed Amo...'
+2026-02-24 16:35:59,531 - __main__ - INFO - [ask_2062412006880] Confidence: 0.659
+2026-02-24 16:54:13,129 - __main__ - INFO - Initializing DocumentProcessor...
+2026-02-24 16:54:13,129 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-24 16:54:13,876 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2026-02-24 16:54:13,876 - __main__ - INFO - DocumentProcessor initialized
+2026-02-24 16:54:13,876 - __main__ - INFO - Initializing RAGEngine...
+2026-02-24 16:54:14,587 - __main__ - INFO - RAGEngine initialized
+2026-02-24 16:54:14,587 - __main__ - INFO - Initializing StructuredExtractor...
+2026-02-24 16:54:15,113 - __main__ - INFO - StructuredExtractor initialized
+2026-02-24 16:54:15,113 - __main__ - INFO - Starting Ultra Doc-Intelligence API server...
+2026-02-24 16:54:15,113 - __main__ - INFO - Listening on http://127.0.0.1:8000
+2026-02-24 16:54:15,128 - asyncio - DEBUG - Using proactor: IocpProactor
+2026-02-24 16:56:25,812 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2026-02-24 16:56:25,813 - multipart.multipart - DEBUG - Calling on_header_field with data[36:55]
+2026-02-24 16:56:25,814 - multipart.multipart - DEBUG - Calling on_header_value with data[57:114]
+2026-02-24 16:56:25,814 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2026-02-24 16:56:25,815 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2026-02-24 16:56:25,819 - multipart.multipart - DEBUG - Calling on_part_data with data[118:97288]
+2026-02-24 16:56:25,820 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2026-02-24 16:56:25,820 - multipart.multipart - DEBUG - Calling on_end with no data
+2026-02-24 16:56:25,821 - __main__ - INFO - [upload_2932729281792] Uploading file: LD53657-Carrier-RC.pdf
+2026-02-24 16:56:25,822 - __main__ - INFO - [upload_2932729281792] File size: 97170 bytes
+2026-02-24 16:56:25,822 - __main__ - INFO - [upload_2932729281792] Processing document...
+2026-02-24 16:56:30,818 - __main__ - INFO - [upload_2932729281792] Document processed: dab23557ca97 with 1 chunks
+2026-02-24 16:58:09,300 - __main__ - INFO - [ask_2932770982464] Question received: When was this document created?
+2026-02-24 16:58:09,300 - __main__ - INFO - [ask_2932770982464] File ID: dab23557ca97
+2026-02-24 16:58:09,301 - __main__ - INFO - [ask_2932770982464] Loading document...
+2026-02-24 16:58:09,302 - __main__ - INFO - [ask_2932770982464] Document loaded: 1 chunks available
+2026-02-24 16:58:09,302 - __main__ - INFO - [ask_2932770982464] Retrieving relevant chunks for: 'When was this document created?'
+2026-02-24 16:58:09,349 - __main__ - INFO - [ask_2932770982464] Retrieved 3 chunks
+2026-02-24 16:58:09,352 - __main__ - DEBUG - [ask_2932770982464] Chunk 0: score=0.335, index=0
+2026-02-24 16:58:09,353 - __main__ - DEBUG - [ask_2932770982464] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:58:09,355 - __main__ - DEBUG - [ask_2932770982464] Chunk 1: score=0.000, index=-1
+2026-02-24 16:58:09,357 - __main__ - DEBUG - [ask_2932770982464] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:58:09,359 - __main__ - DEBUG - [ask_2932770982464] Chunk 2: score=0.000, index=-1
+2026-02-24 16:58:09,361 - __main__ - DEBUG - [ask_2932770982464] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 16:58:09,363 - __main__ - INFO - [ask_2932770982464] Generating answer...
+2026-02-24 16:58:09,550 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 16:58:09,584 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002AAD8ED1360>
+2026-02-24 16:58:09,585 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002AAD43BE640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 16:58:09,612 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002AAD8ED13F0>
+2026-02-24 16:58:09,612 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 16:58:09,613 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 16:58:09,614 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 16:58:09,616 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 16:58:09,616 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 16:58:10,149 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:28:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'9496'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'12.52s'), (b'x-request-id', b'req_01kj7pgz0yfmwt258bkq4hgpmm'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=sJdjwKCQPTsv49vzxEByu7ykbJQEU5Q8fhI2MxOI40g-1771932515.2964723-1.0.1.1-mmX.32nRQv_fxZON2Ms1Cd6KIUvftP2Lhhkm8wf7Mlrqnl0XhWOo5yWgpWEdZpo8l.tWH8_buXcTWVInN9LTBJkDelS0dcay755pxsbutA3sTt1pPslrCP_VaAxkwBHJ; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 11:58:35 GMT'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2e9ecc9a007fe0-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 16:58:10,152 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 16:58:10,153 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 16:58:10,154 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 16:58:10,154 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 16:58:10,155 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 16:58:10,155 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 16:58:10,159 - __main__ - INFO - [ask_2932770982464] Answer generated: '02-07-2026 02:27...'
+2026-02-24 16:58:10,159 - __main__ - INFO - [ask_2932770982464] Confidence: 0.667
+2026-02-24 17:02:24,311 - __main__ - INFO - [extract_2932771348080] Extracting data from file: dab23557ca97
+2026-02-24 17:02:24,315 - __main__ - INFO - [extract_2932771348080] Starting extraction...
+2026-02-24 17:02:24,355 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 17:02:24,385 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002AADB4B4D90>
+2026-02-24 17:02:24,386 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002AAD3E061C0> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 17:02:24,412 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002AADB4B4B20>
+2026-02-24 17:02:24,413 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 17:02:24,415 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 17:02:24,416 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 17:02:24,418 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 17:02:24,419 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 17:02:24,950 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:32:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'10800'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'6s'), (b'x-request-id', b'req_01kj7prqvbf44s3xqr60cwye0d'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=LQavmvfKToqeV4ZiC7hpSCBoMVNXGbDfFloZmPOSjBM-1771932770.0989666-1.0.1.1-OsuCG1BdQxY7gRG3gZVOsoexQgT4crHbOZ2BkKiIMr1pz9ZSqBV4kM7RGFn5EllEYQE5M5p5fQzlNNoRe0kkDrcpK03yZNu1ALbXC._4xjWKL2vWjtOyRg1Cv72GiEtI; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Feb 2026 12:02:50 GMT'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2ea5051de917cf-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 17:02:24,952 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 17:02:24,953 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 17:02:24,954 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 17:02:24,955 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 17:02:24,955 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 17:02:24,956 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 17:02:24,962 - __main__ - INFO - [extract_2932771348080] Extraction complete: 9 fields found
+2026-02-24 17:02:24,977 - __main__ - INFO - [ask_2932720351120] Question received: When was this document created?
+2026-02-24 17:02:24,979 - __main__ - INFO - [ask_2932720351120] File ID: dab23557ca97
+2026-02-24 17:02:24,979 - __main__ - INFO - [ask_2932720351120] Loading document...
+2026-02-24 17:02:24,979 - __main__ - INFO - [ask_2932720351120] Document loaded: 1 chunks available
+2026-02-24 17:02:24,980 - __main__ - INFO - [ask_2932720351120] Retrieving relevant chunks for: 'When was this document created?'
+2026-02-24 17:02:25,039 - __main__ - INFO - [ask_2932720351120] Retrieved 3 chunks
+2026-02-24 17:02:25,040 - __main__ - DEBUG - [ask_2932720351120] Chunk 0: score=0.335, index=0
+2026-02-24 17:02:25,040 - __main__ - DEBUG - [ask_2932720351120] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 17:02:25,041 - __main__ - DEBUG - [ask_2932720351120] Chunk 1: score=0.000, index=-1
+2026-02-24 17:02:25,041 - __main__ - DEBUG - [ask_2932720351120] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 17:02:25,041 - __main__ - DEBUG - [ask_2932720351120] Chunk 2: score=0.000, index=-1
+2026-02-24 17:02:25,042 - __main__ - DEBUG - [ask_2932720351120] Chunk preview: Carrier Details Carrier Carrier MC Phone Equipment Agreed Amount (USD) Size (In feet) SWIFT SHIFT LOGISTICS LLC MC1685682 (618) 629-3271 Flatbed $400....
+2026-02-24 17:02:25,042 - __main__ - INFO - [ask_2932720351120] Generating answer...
+2026-02-24 17:02:25,068 - httpcore.connection - DEBUG - close.started
+2026-02-24 17:02:25,070 - httpcore.connection - DEBUG - close.complete
+2026-02-24 17:02:25,070 - httpcore.connection - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-02-24 17:02:25,094 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002AADB4B72E0>
+2026-02-24 17:02:25,094 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002AAD43BE640> server_hostname='api.groq.com' timeout=5.0
+2026-02-24 17:02:25,124 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002AADB4B6650>
+2026-02-24 17:02:25,124 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-24 17:02:25,125 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-24 17:02:25,126 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-24 17:02:25,126 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-24 17:02:25,127 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-24 17:02:25,389 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 24 Feb 2026 11:32:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'bom'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'8316'), (b'x-ratelimit-reset-requests', b'2m52.8s'), (b'x-ratelimit-reset-tokens', b'18.42s'), (b'x-request-id', b'req_01kj7prrh8f45b0f7bx1gk46dd'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'9d2ea50989ae7f4b-MAA'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-02-24 17:02:25,390 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-24 17:02:25,390 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-24 17:02:25,390 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-24 17:02:25,391 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-24 17:02:25,391 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-24 17:02:25,392 - openai._base_client - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2026-02-24 17:02:25,396 - __main__ - INFO - [ask_2932720351120] Answer generated: '02-07-2026 02:27...'
+2026-02-24 17:02:25,396 - __main__ - INFO - [ask_2932720351120] Confidence: 0.667
