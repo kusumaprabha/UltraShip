@@ -5,9 +5,6 @@ from typing import Dict, Any, Optional
 import openai
 from datetime import datetime
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class StructuredExtractor:
     """
@@ -15,27 +12,32 @@ class StructuredExtractor:
     Supports both LLM-based extraction (Groq/OpenAI) and regex fallback
     """
     
-    def __init__(self, document_processor):
+    def __init__(self, document_processor, groq_api_key=None):
         """
         Initialize the extractor with document processor and API configuration
         
         Args:
             document_processor: Instance of DocumentProcessor for accessing documents
+            groq_api_key: Optional API key for Groq (if not provided, will try environment)
         """
         self.doc_processor = document_processor
         
-        # Configure for Groq (OpenAI-compatible endpoint)
-        self.api_key = os.getenv("GROQ_API_KEY")
+        # Get API key from parameter or environment variable
+        self.api_key = groq_api_key or os.getenv("GROQ_API_KEY")
         self.use_api = bool(self.api_key)
         
         if self.use_api:
-            # Use OpenAI SDK with Groq's endpoint
-            self.client = openai.OpenAI(
-                api_key=self.api_key,
-                base_url="https://api.groq.com/openai/v1"
-            )
-            self.model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
-            print(f"✅ Using Groq API with model: {self.model}")
+            try:
+                # Use OpenAI SDK with Groq's endpoint
+                self.client = openai.OpenAI(
+                    api_key=self.api_key,
+                    base_url="https://api.groq.com/openai/v1"
+                )
+                self.model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+                print(f"✅ Using Groq API with model: {self.model}")
+            except Exception as e:
+                print(f"⚠️ Failed to initialize Groq client: {e}")
+                self.use_api = False
         else:
             print("⚠️ No API key found. Using regex-based extraction only.")
     
