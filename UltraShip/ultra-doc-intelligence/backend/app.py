@@ -5,6 +5,7 @@ import uvicorn
 import logging
 import traceback
 import sys
+import os
 from models import *
 from document_processor import DocumentProcessor
 from rag_engine import RAGEngine
@@ -21,30 +22,30 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Initialize components
-app = FastAPI(title="Ultra Doc-Intelligence API")
+# Check for required environment variables
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+if not GROQ_API_KEY:
+    logger.error("GROQ_API_KEY environment variable not set")
+    # In production, you might want to raise an exception here
+    # For now, we'll log an error but continue (the components will fail if they need it)
+else:
+    logger.info("GROQ_API_KEY found in environment variables")
 
-# CORS for frontend
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Initialize processors with error handling
+# Initialize components with error handling
 try:
     logger.info("Initializing DocumentProcessor...")
     doc_processor = DocumentProcessor()
     logger.info("DocumentProcessor initialized")
     
     logger.info("Initializing RAGEngine...")
-    rag_engine = RAGEngine(doc_processor)
+    # Pass the API key to RAGEngine if it accepts it
+    # You may need to modify your RAGEngine class to accept an API key parameter
+    rag_engine = RAGEngine(doc_processor, groq_api_key=GROQ_API_KEY)
     logger.info("RAGEngine initialized")
     
     logger.info("Initializing StructuredExtractor...")
-    extractor = StructuredExtractor(doc_processor)
+    # Pass the API key to StructuredExtractor if it accepts it
+    extractor = StructuredExtractor(doc_processor, groq_api_key=GROQ_API_KEY)
     logger.info("StructuredExtractor initialized")
     
 except Exception as e:
@@ -65,6 +66,9 @@ async def health_check():
             "document_processor": "initialized",
             "rag_engine": "initialized",
             "extractor": "initialized"
+        },
+        "env_vars": {
+            "groq_api_key_set": bool(GROQ_API_KEY)
         }
     }
 
@@ -272,88 +276,11 @@ async def list_documents():
 if __name__ == "__main__":
     logger.info("Starting Ultra Doc-Intelligence API server...")
     logger.info(f"Listening on http://127.0.0.1:8000")
+    
+    # Log environment info (without exposing the actual key)
+    if GROQ_API_KEY:
+        logger.info(f"GROQ_API_KEY is set (length: {len(GROQ_API_KEY)} characters)")
+    else:
+        logger.warning("GROQ_API_KEY is not set - API functionality may be limited")
+    
     uvicorn.run(app, host="127.0.0.1", port=8000, log_level="debug")
-
-
-# from fastapi import FastAPI, UploadFile, File, HTTPException
-# from fastapi.middleware.cors import CORSMiddleware
-# from typing import Optional
-# import uvicorn
-# from models import *
-# from document_processor import DocumentProcessor
-# from rag_engine import RAGEngine
-# from extractor import StructuredExtractor
-
-# # Initialize components
-# app = FastAPI(title="Ultra Doc-Intelligence API")
-
-# # CORS for frontend
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
-# # Initialize processors
-# doc_processor = DocumentProcessor()
-# rag_engine = RAGEngine(doc_processor)
-# extractor = StructuredExtractor(doc_processor)
-
-# @app.get("/")
-# async def root():
-#     return {"message": "Ultra Doc-Intelligence API", "status": "running"}
-
-# @app.post("/upload", response_model=UploadResponse)
-# async def upload_document(file: UploadFile = File(...)):
-#     """
-#     Upload and process a logistics document
-#     """
-#     try:
-#         # Read file content
-#         content = await file.read()
-        
-#         # Process document
-#         result = doc_processor.process_document(content, file.filename)
-        
-#         return UploadResponse(**result)
-    
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
-# @app.post("/ask", response_model=AskResponse)
-# async def ask_question(request: AskRequest):
-#     """
-#     Ask a question about an uploaded document
-#     """
-#     try:
-#         # Retrieve relevant chunks
-#         chunks = rag_engine.retrieve_relevant_chunks(
-#             query=request.question,
-#             file_id=request.file_id
-#         )
-        
-#         # Generate answer
-#         result = rag_engine.generate_answer(request.question, chunks)
-        
-#         return AskResponse(**result)
-    
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
-# @app.post("/extract", response_model=ExtractionResponse)
-# async def extract_data(file_id: str):
-#     """
-#     Extract structured shipment data from document
-#     """
-#     try:
-#         result = extractor.extract_fields(file_id)
-#         return ExtractionResponse(**result)
-    
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
-# # MAIN:
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="127.0.0.1", port=8000)  # Changed from "0.0.0.0" to "127.0.0.1"
