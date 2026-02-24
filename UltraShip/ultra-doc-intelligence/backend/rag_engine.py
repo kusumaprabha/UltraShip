@@ -1,22 +1,39 @@
+# backend/rag_engine.py
 import numpy as np
 from typing import List, Tuple, Dict, Any
 import openai  # Still using OpenAI SDK!
 from sentence_transformers import SentenceTransformer
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class RAGEngine:
-    def __init__(self, document_processor):
+    def __init__(self, document_processor, groq_api_key=None):
+        """
+        Initialize the RAG engine with document processor and API configuration
+        
+        Args:
+            document_processor: Instance of DocumentProcessor
+            groq_api_key: Optional API key for Groq (if not provided, will try environment)
+        """
         self.doc_processor = document_processor
         self.embedding_model = document_processor.embedding_model
         
-        # Configure OpenAI client to use Groq's API endpoint
-        self.client = openai.OpenAI(
-            api_key=os.getenv("GROQ_API_KEY"),  # Your Groq API key
-            base_url="https://api.groq.com/openai/v1"  # Groq's OpenAI-compatible endpoint
-        )
+        # Get API key from parameter or environment variable
+        self.api_key = groq_api_key or os.getenv("GROQ_API_KEY")
+        
+        if not self.api_key:
+            print("⚠️ WARNING: No Groq API key found. RAG engine will have limited functionality.")
+            self.client = None
+        else:
+            try:
+                # Configure OpenAI client to use Groq's API endpoint
+                self.client = openai.OpenAI(
+                    api_key=self.api_key,  # Your Groq API key
+                    base_url="https://api.groq.com/openai/v1"  # Groq's OpenAI-compatible endpoint
+                )
+                print("✅ RAGEngine: Groq client initialized successfully")
+            except Exception as e:
+                print(f"❌ RAGEngine: Failed to initialize Groq client: {e}")
+                self.client = None
         
         # Model selection (choose based on your needs)
         self.model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
@@ -79,6 +96,20 @@ class RAGEngine:
             return {
                 'answer': "I cannot confidently answer this question based on the document content.",
                 'confidence': best_score,
+                'source_text': best_chunk[:500] + "..." if len(best_chunk) > 500 else best_chunk,
+                'source_chunk_index': best_idx
+            }
+        
+        # Check if we have a valid client
+        if not self.client:
+            # Fallback to simple extraction if no API client
+            print("⚠️ No Groq client available, using fallback extraction")
+            answer = self.extract_answer_from_context(query, context)
+            confidence = self.calculate_confidence(answer, context_chunks, query)
+            
+            return {
+                'answer': answer,
+                'confidence': confidence,
                 'source_text': best_chunk[:500] + "..." if len(best_chunk) > 500 else best_chunk,
                 'source_chunk_index': best_idx
             }
@@ -192,3 +223,17 @@ ANSWER (based only on the context above):"""
             confidence *= 0.3
         
         return min(max(confidence, 0.0), 1.0)  # Clamp to [0, 1]
+    
+    def get_status(self) -> Dict[str, Any]:
+        """Return the current status of the RAG engine"""
+        return {
+            "api_configured": self.client is not None,
+            "model": self.model,
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens,
+            "confidence_thresholds": {
+                "high": self.high_confidence_threshold,
+                "medium": self.medium_confidence_threshold,
+                "low": self.low_confidence_threshold
+            }
+        }
